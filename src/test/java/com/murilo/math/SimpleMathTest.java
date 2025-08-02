@@ -3,11 +3,14 @@ package com.murilo.math;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+@DisplayName("Test with SimpleMath class and operations")
 class SimpleMathTest {
 
 	@Test
+	@DisplayName("Test sum 6.2+2.0 = 8.2")
 	void testSum	() {
 		SimpleMath math = new SimpleMath();
 		double firstNumber = 6.2D;
@@ -20,6 +23,7 @@ class SimpleMathTest {
 		assertNotNull(actual);
 	}
 	@Test
+	@DisplayName("Test subtraction 6.2-2.0 = 4.2")
 	void testSubtraction() {
 		SimpleMath math = new SimpleMath();
 		double firstNumber = 6.2D;
@@ -32,6 +36,7 @@ class SimpleMathTest {
 		assertNotNull(actual);
 	}
 	@Test
+	@DisplayName("Test multiplication 6.2*2.0 = 12.4")
 	void testMultiplication() {
 		SimpleMath math = new SimpleMath();
 		double firstNumber = 6.2D;
@@ -56,6 +61,7 @@ class SimpleMathTest {
 		assertNotNull(actual);
 	}
 	@Test
+	@DisplayName("Test Mean (6.2+2.0)/2 = 4.1")
 	void testMean() {
 		SimpleMath math = new SimpleMath();
 		double firstNumber = 6.2D;
@@ -68,6 +74,7 @@ class SimpleMathTest {
 		assertNotNull(actual);
 	}
 	@Test
+	@DisplayName("Test SquareRoot of 4 = 2")
 	void testSquareRoot() {
 		SimpleMath math = new SimpleMath();
 		double firstNumber = 4.0D;
