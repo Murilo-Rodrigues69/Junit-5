@@ -78,19 +78,25 @@ class SimpleMathTest {
 		assertNotNull(actual);
 	}
 
-	@Disabled("TODO: We need still work on it!")
+	//@Disabled("TODO: We need still work on it!")
 	@Test
 	@DisplayName("Test Division by Zero")
 	void testDivision() {
 
+		//given
 		double firstNumber = 6.2D;
-		double secondNumber = 2D;
-		Double actual = math.division(firstNumber, secondNumber);
-		double expected = 3.1D;
-		Assertions.assertEquals(expected, actual,
-				() -> firstNumber + "/" + secondNumber + " did not produce " + expected + "!");
-		assertNotEquals(3.0D, actual, () -> actual + "was equal " + 2.0D);
-		assertNotNull(actual);
+		double secondNumber = 0D;
+		
+		var expectedMessage = "Impossible to divide by zero!";
+		
+		
+		//when & then 
+		ArithmeticException actual = assertThrows(ArithmeticException.class,() -> { 
+			//when & then 
+		math.division(firstNumber, secondNumber);
+		}, () -> "Division by zero should throw an ArithmeticException");
+		
+		assertEquals(expectedMessage, actual.getMessage(), () -> "Unexpected excpetion message!");
 	}
 
 	@Test
