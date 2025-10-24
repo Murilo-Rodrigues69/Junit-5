@@ -8,6 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
 
 @DisplayName("Test with SimpleMath class and operations")
@@ -26,7 +27,12 @@ class SimpleMathTestS4 {
 	//@Disabled("TODO: We need still work on it!")
 	@ParameterizedTest
 	//@MethodSource("testDivisionInputParameters")
-	@MethodSource()
+	//@MethodSource()
+	@CsvSource({
+		"6.2, 2, 3.1",
+		"71, 14, 5.07",
+		"18.3, 3.1, 5.90"
+	})
 	void testDivision( double firstNumber, double secondNumber, double expected  ) {
 
 		System.out.println("Test" + firstNumber+ "/" + secondNumber + "=" + expected + "!" );
@@ -42,6 +48,7 @@ class SimpleMathTestS4 {
 
 	//public static Stream<Arguments> testDivisionInputParameters() {
 	
+	/**
 	public static Stream<Arguments> testDivision(){	
 		return Stream.of(
 				Arguments.of(6.2D, 2D, 3.1D),
@@ -50,5 +57,5 @@ class SimpleMathTestS4 {
 			);
 		
 	}
-
+	*/
 }
